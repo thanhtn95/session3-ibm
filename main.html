@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<b> Weight: </b>
+<br>
+<input style="padding: 5px; border-style:double; margin-top: 15px; margin-bottom: 15px " type="number" id="wt">
+<br>
+<b> Height:
+</b>
+<br>
+<input style="padding: 5px; border-style:double; margin-top: 15px; margin-bottom: 15px  " type="number" id="ht">
+<br>
+<b> IBM: </b>
+<br>
+<input disabled style="padding: 5px; border-style:double; margin-top: 15px; margin-bottom: 15px " type="number"
+       id="ibm">
+<br>
+<button style="font: bold" type="button" id="inp" onclick="count()">Count IBM type</button>
+<br>
+<h3 id="dis"></h3>
+</body>
+<script>
+    function count() {
+        let wt = parseFloat(document.getElementById("wt").value);
+        let ht = parseFloat(document.getElementById("ht").value+2);
+        let ibm = wt/ht;
+        document.getElementById("ibm").value = ibm;
+        if(ibm<18.5){
+            document.getElementById("dis").innerText="Underweight";
+        }else{
+            if(ibm<25){
+                document.getElementById("dis").innerText="Normal";
+            }else{
+                if(ibm<30){
+                    document.getElementById("dis").innerText="Overweight";
+                }else{
+                    document.getElementById("dis").innerText="Obese";
+                }
+            }
+        }
+
+    }
+</script>
+</html>
